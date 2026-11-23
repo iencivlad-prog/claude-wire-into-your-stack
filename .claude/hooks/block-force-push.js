@@ -7,9 +7,9 @@
 // Global git options that take their value as a separate token (e.g. `-C <path>`).
 const GIT_OPTS_WITH_VALUE = new Set(['-C', '-c', '--git-dir', '--work-tree', '--namespace', '--super-prefix']);
 
-// Split a command into segments on ; && || | and newlines.
+// Split a command into segments on ; && || | & and newlines.
 function splitSegments(command) {
-  return command.split(/&&|\|\||[;|\n]/);
+  return command.split(/&&|\|\||[;|&\n]/);
 }
 
 // Tokenize a segment on whitespace, keeping quoted strings together and removing the quotes.
